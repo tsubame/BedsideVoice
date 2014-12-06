@@ -7,12 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */; };
+		B861061F1A330BB6002AC02D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061E1A330BB6002AC02D /* Alamofire.swift */; };
 		B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443961A32E8F2000EC554 /* AppDelegate.swift */; };
 		B86443991A32E8F2000EC554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443981A32E8F2000EC554 /* ViewController.swift */; };
 		B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B864439A1A32E8F2000EC554 /* Main.storyboard */; };
 		B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B864439D1A32E8F2000EC554 /* Images.xcassets */; };
 		B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B864439F1A32E8F2000EC554 /* LaunchScreen.xib */; };
 		B86443AD1A32E8F2000EC554 /* BedsideVoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443AC1A32E8F2000EC554 /* BedsideVoiceTests.swift */; };
+		B86443BD1A32EAF4000EC554 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443BC1A32EAF4000EC554 /* SoundPlayer.swift */; };
+		B86443BE1A32EAF4000EC554 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443BC1A32EAF4000EC554 /* SoundPlayer.swift */; };
+		B86443C01A32EB0F000EC554 /* LocationGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443BF1A32EB0F000EC554 /* LocationGetter.swift */; };
+		B86443C11A32EB0F000EC554 /* LocationGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443BF1A32EB0F000EC554 /* LocationGetter.swift */; };
+		B86443C31A32EB18000EC554 /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C21A32EB18000EC554 /* WeatherGetter.swift */; };
+		B86443C41A32EB18000EC554 /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C21A32EB18000EC554 /* WeatherGetter.swift */; };
+		B86443C61A32EB2C000EC554 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C51A32EB2C000EC554 /* Constants.swift */; };
+		B86443C71A32EB2C000EC554 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C51A32EB2C000EC554 /* Constants.swift */; };
+		B86443C91A32EB39000EC554 /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C81A32EB39000EC554 /* FadeLabel.swift */; };
+		B86443CA1A32EB39000EC554 /* FadeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443C81A32EB39000EC554 /* FadeLabel.swift */; };
+		B86443CC1A32EED1000EC554 /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443CB1A32EED1000EC554 /* TalkManager.swift */; };
+		B86443CD1A32EED1000EC554 /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443CB1A32EED1000EC554 /* TalkManager.swift */; };
+		B86443CF1A32EEEC000EC554 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */; };
+		B86443D01A32EEEC000EC554 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */; };
+		B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */ = {isa = PBXBuildFile; fileRef = B86443D21A32EFF6000EC554 /* charA_greeting.json */; };
+		B86443D41A32EFF6000EC554 /* charA_greeting.json in Resources */ = {isa = PBXBuildFile; fileRef = B86443D21A32EFF6000EC554 /* charA_greeting.json */; };
+		B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443D51A32F075000EC554 /* TalkManagerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherGetterTest.swift; sourceTree = "<group>"; };
+		B861061E1A330BB6002AC02D /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		B86443911A32E8F2000EC554 /* BedsideVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BedsideVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86443951A32E8F2000EC554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86443961A32E8F2000EC554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +57,15 @@
 		B86443A61A32E8F2000EC554 /* BedsideVoiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BedsideVoiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86443AB1A32E8F2000EC554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86443AC1A32E8F2000EC554 /* BedsideVoiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedsideVoiceTests.swift; sourceTree = "<group>"; };
+		B86443BC1A32EAF4000EC554 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		B86443BF1A32EB0F000EC554 /* LocationGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationGetter.swift; sourceTree = "<group>"; };
+		B86443C21A32EB18000EC554 /* WeatherGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
+		B86443C51A32EB2C000EC554 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B86443C81A32EB39000EC554 /* FadeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeLabel.swift; sourceTree = "<group>"; };
+		B86443CB1A32EED1000EC554 /* TalkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkManager.swift; sourceTree = "<group>"; };
+		B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B86443D21A32EFF6000EC554 /* charA_greeting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = charA_greeting.json; sourceTree = "<group>"; };
+		B86443D51A32F075000EC554 /* TalkManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +107,14 @@
 		B86443931A32E8F2000EC554 /* BedsideVoice */ = {
 			isa = PBXGroup;
 			children = (
+				B86443B91A32E974000EC554 /* Vendor */,
+				B86443B71A32E966000EC554 /* Model */,
+				B86443B61A32E95F000EC554 /* Controller */,
 				B86443961A32E8F2000EC554 /* AppDelegate.swift */,
 				B86443981A32E8F2000EC554 /* ViewController.swift */,
 				B864439A1A32E8F2000EC554 /* Main.storyboard */,
 				B864439D1A32E8F2000EC554 /* Images.xcassets */,
+				B86443C51A32EB2C000EC554 /* Constants.swift */,
 				B864439F1A32E8F2000EC554 /* LaunchScreen.xib */,
 				B86443941A32E8F2000EC554 /* Supporting Files */,
 			);
@@ -90,6 +124,9 @@
 		B86443941A32E8F2000EC554 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B86443D11A32EFE7000EC554 /* scenario */,
+				B86443BB1A32E985000EC554 /* se */,
+				B86443BA1A32E97D000EC554 /* voice */,
 				B86443951A32E8F2000EC554 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -98,6 +135,8 @@
 		B86443A91A32E8F2000EC554 /* BedsideVoiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */,
+				B86443D51A32F075000EC554 /* TalkManagerTest.swift */,
 				B86443AC1A32E8F2000EC554 /* BedsideVoiceTests.swift */,
 				B86443AA1A32E8F2000EC554 /* Supporting Files */,
 			);
@@ -110,6 +149,64 @@
 				B86443AB1A32E8F2000EC554 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B86443B61A32E95F000EC554 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B86443B71A32E966000EC554 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B86443CB1A32EED1000EC554 /* TalkManager.swift */,
+				B86443B81A32E96C000EC554 /* Lib */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B86443B81A32E96C000EC554 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				B86443BC1A32EAF4000EC554 /* SoundPlayer.swift */,
+				B86443C81A32EB39000EC554 /* FadeLabel.swift */,
+				B86443C21A32EB18000EC554 /* WeatherGetter.swift */,
+				B86443BF1A32EB0F000EC554 /* LocationGetter.swift */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		B86443B91A32E974000EC554 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */,
+				B861061E1A330BB6002AC02D /* Alamofire.swift */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		B86443BA1A32E97D000EC554 /* voice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = voice;
+			sourceTree = "<group>";
+		};
+		B86443BB1A32E985000EC554 /* se */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = se;
+			sourceTree = "<group>";
+		};
+		B86443D11A32EFE7000EC554 /* scenario */ = {
+			isa = PBXGroup;
+			children = (
+				B86443D21A32EFF6000EC554 /* charA_greeting.json */,
+			);
+			name = scenario;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +258,11 @@
 				TargetAttributes = {
 					B86443901A32E8F2000EC554 = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					B86443A51A32E8F2000EC554 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -194,6 +296,7 @@
 			files = (
 				B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */,
 				B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */,
+				B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */,
 				B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86443D41A32EFF6000EC554 /* charA_greeting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +317,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B86443991A32E8F2000EC554 /* ViewController.swift in Sources */,
+				B86443C91A32EB39000EC554 /* FadeLabel.swift in Sources */,
+				B86443C31A32EB18000EC554 /* WeatherGetter.swift in Sources */,
+				B86443CC1A32EED1000EC554 /* TalkManager.swift in Sources */,
+				B86443BD1A32EAF4000EC554 /* SoundPlayer.swift in Sources */,
 				B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */,
+				B861061F1A330BB6002AC02D /* Alamofire.swift in Sources */,
+				B86443CF1A32EEEC000EC554 /* SwiftyJSON.swift in Sources */,
+				B86443C01A32EB0F000EC554 /* LocationGetter.swift in Sources */,
+				B86443C61A32EB2C000EC554 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +333,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86443C71A32EB2C000EC554 /* Constants.swift in Sources */,
+				B86443BE1A32EAF4000EC554 /* SoundPlayer.swift in Sources */,
+				B86443C41A32EB18000EC554 /* WeatherGetter.swift in Sources */,
+				B86443D01A32EEEC000EC554 /* SwiftyJSON.swift in Sources */,
 				B86443AD1A32E8F2000EC554 /* BedsideVoiceTests.swift in Sources */,
+				B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */,
+				B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */,
+				B86443CD1A32EED1000EC554 /* TalkManager.swift in Sources */,
+				B86443CA1A32EB39000EC554 /* FadeLabel.swift in Sources */,
+				B86443C11A32EB0F000EC554 /* LocationGetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -325,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -336,9 +457,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BedsideVoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";
 			};
 			name = Debug;
 		};
@@ -346,9 +470,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = BedsideVoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";
 			};
 			name = Release;
 		};
@@ -367,6 +494,7 @@
 				INFOPLIST_FILE = BedsideVoiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BedsideVoice.app/BedsideVoice";
 			};
 			name = Debug;
@@ -382,6 +510,7 @@
 				INFOPLIST_FILE = BedsideVoiceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BedsideVoice.app/BedsideVoice";
 			};
 			name = Release;
@@ -405,6 +534,7 @@
 				B86443B21A32E8F2000EC554 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B86443B31A32E8F2000EC554 /* Build configuration list for PBXNativeTarget "BedsideVoiceTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +543,7 @@
 				B86443B51A32E8F2000EC554 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
