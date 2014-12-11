@@ -17,24 +17,28 @@ enum SoundPlayerErrorCode:Int {
 public class SoundPlayer: NSObject {
 
     // 音声再生用
-    var _voicePlayer: AVAudioPlayer?
+    //var _voicePlayer: AVAudioPlayer?
+    
     // BGM再生用
     var _bgmPlayer: AVAudioPlayer?
+    // 音声再生用キュー
+    var _queuePlayer: AVQueuePlayer?
     // SE再生用
     var _sePlayers = [AVAudioPlayer]()
     // 無音再生用
     var _nosoundPlayer: AVAudioPlayer?
+    
     // エラーメッセージ
     var _errorMessage: String?
     // エラーコード
     var _errorCode: SoundPlayerErrorCode = SoundPlayerErrorCode.NoError
     
-    // BGMのボリューム
-    let DEFAULT_BGM_VOLUME: Float = 0.05
-    // SEのボリューム
-    let DEFAULT_SE_VOLUME: Float = 0.5
-    // ボイスのボリューム
-    let DEFAULT_VOICE_VOLUME: Float = 1.0
+    // 音量
+    var _voiceVolume: Float = 1.0
+    //
+    var _bgmVolume: Float   = 0.05
+    //
+    var _seVolume: Float    = 0.5
     
     // 音声ファイルの拡張子が無い場合に付ける拡張子
     let SOUND_SUFFIXES = [".mp3", ".m4a", ".wav", ".aiff"]
@@ -42,13 +46,111 @@ public class SoundPlayer: NSObject {
     // 無音用サウンド
     let NOSOUND_FILE = "無音"
 
+    
+    
+
+    
+    
     override init() {
         super.init()
     }
     
+    
+    // 音声のボリューム設定
+    func setVoiceVolume(volume: Float) {
+        _voiceVolume = volume
+    }
+    
+    // 音楽のボリューム設定
+    func setBgmVolume(volume: Float) {
+        _bgmVolume = volume
+    }
+    
+    // SEのボリューム設定
+    func setSeVolume(volume: Float) {
+        _seVolume = volume
+    }
+    
+    // 単一の音声を再生
+    func playVoice(fileName: String) {
+        if _queuePlayer? != nil {
+            _queuePlayer?.pause()
+        }
+        
+        var fileNames = [String]()
+        fileNames.append(fileName)
+        
+        playVoices(fileNames)
+    }
+    
+    // 複数の音声を連続再生 音声間の間隔を開けない
+    func playVoices(files: [String]) {
+        _queuePlayer = makeAVQuePlayer(files)
+        if _errorCode != SoundPlayerErrorCode.NoError {
+            return
+        }
+
+        // 全ての再生終了時に実行
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: _queuePlayer?.items().last, queue: nil, usingBlock: {
+            (notification: NSNotification!) in
+            
+            println("音声の再生が全部終了")
+            self._queuePlayer?.removeAllItems()
+            // 通知発行
+            NSNotificationCenter.defaultCenter().postNotificationName("voicePlayEnded", object: nil)
+        })
+        
+        _queuePlayer?.volume = _voiceVolume
+        _queuePlayer?.play()
+    }
+    
+    // 音声の停止
+    func stopVoice() {
+        if _queuePlayer != nil {
+            _queuePlayer?.pause()
+            _queuePlayer?.removeAllItems()
+        }
+    }
+    
+    // 音声を一時停止
+    func pauseVoice() {
+        println("音声を一時停止します")
+        
+        if _queuePlayer != nil {
+            _queuePlayer?.pause()
+        }
+    }
+    
+    // 音声を一時停止から再開
+    func resumeVoice() {
+        println("音声を再開します")
+        
+        if _queuePlayer != nil {
+            _queuePlayer?.play()
+        }
+    }
+    
+    // 音声が再生中か
+    func isVoicePlaying() -> Bool{
+        if _queuePlayer == nil {
+            return false
+        }
+        
+        var itemCount: Int? = _queuePlayer?.items().count
+        if itemCount != nil {
+            if 0 < itemCount! {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
     // 音楽の再生 ファイル名のみ指定
     func playBgm(fileName: String) {
-        playBgm(fileName, volume: DEFAULT_BGM_VOLUME)
+        playBgm(fileName, volume: _bgmVolume)
     }
     
     // 音楽の再生 ファイル名、音量を指定
@@ -67,9 +169,10 @@ public class SoundPlayer: NSObject {
         if _errorCode != SoundPlayerErrorCode.NoError {
             return
         }
-            
+        
         _bgmPlayer?.numberOfLoops = numberOfLoops
         _bgmPlayer?.volume = volume
+        //_bgmPlayer?.prepareToPlay()
         println("　BGMを再生します: " + fileName)
         _bgmPlayer?.play()
     }
@@ -92,46 +195,11 @@ public class SoundPlayer: NSObject {
             _bgmPlayer?.stop()
         }
     }
-        
-    // ボイスの再生 ファイル名を指定
-    func playVoice(fileName: String) {
-        playVoice(fileName, volume: DEFAULT_VOICE_VOLUME)
-    }
-    
-    // ボイスの再生 ファイル名、音量を指定
-    func playVoice(fileName: String, volume: Float) {
-        // ボイスが再生中なら停止
-        if isVoicePlaying() {
-            stopVoice()
-        }
-        _voicePlayer = makeAudioPlayer(fileName)
-        if _errorCode != SoundPlayerErrorCode.NoError {
-            return
-        }
-        _voicePlayer?.numberOfLoops = 0
-        _voicePlayer?.volume = volume
-        _voicePlayer?.play()
-    }
-    
-    // ボイスの停止
-    func stopVoice() {
-        if !isVoicePlaying() {
-            _voicePlayer?.stop()
-        }
-    }
-    
-    // ボイスが再生中か
-    func isVoicePlaying() -> Bool{
-        if (_voicePlayer?.playing != nil) {
-            return true
-        }
-        
-        return false
-    }
+
     
     // SEの再生 ファイル名を指定
     func playSE(fileName: String) {
-        playSE(fileName, volume: DEFAULT_SE_VOLUME)
+        playSE(fileName, volume: _seVolume)
     }
     
     // SEの再生 ファイル名、音量を指定
@@ -158,6 +226,7 @@ public class SoundPlayer: NSObject {
         sePlayer?.numberOfLoops = 0
         sePlayer?.currentTime = 0
         sePlayer?.volume = volume
+        sePlayer?.prepareToPlay()
         sePlayer?.play()
     }
     
@@ -179,6 +248,51 @@ public class SoundPlayer: NSObject {
             _nosoundPlayer?.stop()
         }
     }
+    
+    
+    // 音声を連続で再生 音声間の間隔を開ける
+    func playVoicesWithGap(files: [String], gap: Double) {
+        _queuePlayer = makeAVQuePlayer(files)
+        if _errorCode != SoundPlayerErrorCode.NoError {
+            return
+        }
+        
+        // オブザーバー登録 1ファイルの再生が終了するごとに呼ばれる
+        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil, usingBlock: {
+            (notification: NSNotification!) in
+            self.playNextVoiceAfterGap(gap)
+        })
+        
+        _queuePlayer?.volume = _voiceVolume
+        //_queuePlayer?.actionAtItemEnd = AVPlayerActionAtItemEnd.Advance
+        _queuePlayer?.play()
+    }
+    
+    // キュー内の音声を再生し終えたことを通知
+    func postNotifVoicePlayEnded() {
+        println("音声の再生が全部終了")
+        self._queuePlayer?.removeAllItems()
+        NSNotificationCenter.defaultCenter().postNotificationName("voicePlayEnded", object: nil)
+    }
+    
+    // ギャップ演出用 キューが1つ進むごとに呼ばれる
+    func playNextVoiceAfterGap(gap: Double) {
+        println("キュー内の音声の再生が1つ終了。\(gap)秒、間隔をあけます")
+        // 一時停止
+        _queuePlayer?.pause()
+        
+        var dispatch = DispatchUtil()
+        // 一定秒後に再生を再開
+        dispatch.after(gap, {
+            self._queuePlayer?.play()
+            
+            if self._queuePlayer?.currentItem == nil {
+                self.postNotifVoicePlayEnded()
+            }
+        })
+    }
+
+    
     
     // エラーメッセージを返す
     func getErrorMessage() -> String? {
@@ -229,4 +343,33 @@ public class SoundPlayer: NSObject {
 
         return AVAudioPlayer(contentsOfURL: url, error: nil)
     }
+    
+    // ファイル名の配列を受け取り、AVQueuePlayerのインスタンスを返す。
+    func makeAVQuePlayer(files:[String]) -> AVQueuePlayer? {
+        var items = [AVPlayerItem]()
+        _errorCode    = SoundPlayerErrorCode.NoError
+        _errorMessage = nil
+        
+        for fileName in files {
+            // 拡張子を補う
+            var fullFileName = supplySuffix(fileName)
+            
+            // ファイルがなければnilを返す
+            var path = NSBundle.mainBundle().pathForResource(fullFileName, ofType: "")
+            if path == nil {
+                _errorCode = SoundPlayerErrorCode.FileNotFound
+                _errorMessage = "=== error! === ファイルがありません！: " + fileName
+                println(_errorMessage!)
+                
+                return nil
+            }
+
+            let url  = NSURL.fileURLWithPath(path!)
+            let item = AVPlayerItem(URL: url)
+            items.append(item)
+        }
+        
+        return AVQueuePlayer(items: items)
+    }
+    
 }

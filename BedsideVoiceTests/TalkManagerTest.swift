@@ -38,9 +38,9 @@ class TalkManagerTest: XCTestCase {
         _sut.getGreetingMsg()
         XCTAssertFalse(_sut.hasError(), "エラーでないこと")
         XCTAssertNotEqual(_sut._fileNames.count, 0, "0件以上の結果が帰ってくること")
-        println(_sut._fileNames)
-        println(_sut._messages)
-        println(_sut._faces)
+        //println(_sut._fileNames)
+        //println(_sut._messages)
+        //println(_sut._faces)
     }
     
     

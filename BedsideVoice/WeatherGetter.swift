@@ -23,7 +23,7 @@
 // 明日の天気画像
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 class WeatherGetter: NSObject {
     
@@ -84,6 +84,8 @@ class WeatherGetter: NSObject {
     // HTTPで取得したデータ
     var _httpData: NSData?
     
+    var _weatherTokyo = [String: String]()
+    
     
     override init() {
         super.init()
@@ -96,19 +98,37 @@ class WeatherGetter: NSObject {
     }
     
     // 東京の天気を取得
-    func getWeatherOfTokyo() -> NSDictionary {
-        var weather = NSDictionary()
-        
+    func getWeatherOfTokyo() {
+
         let url = CURRENT_WEATHER_API_URL + "q=Tokyo"
         println("東京の現在のお天気取得中...")
         println(url)
         
-        //Alamofire.request(.GET, url)
-        
-        //accessAsync(url)
-        
-        return weather
+        Alamofire.request(.GET, url)
+            .responseJSON { (_, _, json, error) in
+                println(json)
+                
+                if error != nil {
+                    self._error = true
+                    println(error?.description)
+                    return
+                }
+                
+                var wDic = JSON(object: json!)
+
+                var minTemp = wDic["main"]["temp_min"].stringValue!
+                var maxTemp = wDic["main"]["temp_max"].stringValue!
+                var cTemp   = wDic["main"]["temp"].stringValue!
+                var tempImg = wDic["weather"][0]["icon"].stringValue!
+                var cWeather = self.getJWeatherFromWcode(tempImg)
+                
+                self._weatherTokyo["minTemp"]  = minTemp
+                self._weatherTokyo["maxTemp"]  = maxTemp
+                self._weatherTokyo["cTemp"]    = cTemp
+                self._weatherTokyo["cWeather"] = cWeather
+        }
     }
+    
     
     // 天気の更新　位置情報を受け取る
     func updateWeather() {
@@ -158,7 +178,8 @@ class WeatherGetter: NSObject {
             _httpData = data
             _error    = false
             let json = JSON(data: _httpData!)
-            //println(json)
+            println(json)
+            
             if !json["list"] {
                 getWeatherDataCurrent(json)
                 writePrefCurrent()
@@ -166,7 +187,6 @@ class WeatherGetter: NSObject {
                 getWeatherDataDaily(json)
                 writePrefDaily()
             }
-            //getWeatherDataFromJson()
         } else {
             println("通信エラー")
             _error = true

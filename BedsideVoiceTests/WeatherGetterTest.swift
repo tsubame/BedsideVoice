@@ -25,28 +25,29 @@ class WeatherGetterTest: XCTestCase {
     }
 
     func testGetWeatherOfTokyo() {
-        // This is an example of a functional test case.
-        //XCTAssert(true, "Pass")
-        var w = _sut.getWeatherOfTokyo()
-        XCTAssertFalse(_sut.hasError(), "エラーがないこと")
+        /*
+        var expectation = self.expectationWithDescription("fetch posts")
         
-        if w["minTemp"] == nil {
-            println("minTempがないよ")
-        }
+        self._sut.getWeatherOfTokyo()
+        XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
+        
+        var w = [String: String]()
+        
+        //expectation.fulfill()
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(6.5 * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), {
+                w = self._sut._weatherTokyo
+                expectation.fulfill()
+        })
+        self.waitForExpectationsWithTimeout(7.0, handler: nil)
 
-        if w["maxTemp"] == nil {
-            println("maxTempがないよ")
-        }
-        
-        if w["currentTemp"] == nil {
-            println("currentTempがないよ")
-        }
-        
-        if w["currentWeather"] == nil {
-            println("currentWeatherがないよ")
-        }
-        
-        println(w.count)
+        println(w)
+        XCTAssertNotEqual(w.count, 0, "0件以上の結果が帰ってくること")
+        */
     }
 
 

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B860DCAA1A3347BD00CA828A /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B860DCA91A3347BD00CA828A /* Alamofire.swift */; };
+		B860DCB71A33491300CA828A /* Alamofire.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = B860DCB11A3348D500CA828A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */; };
-		B861061F1A330BB6002AC02D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061E1A330BB6002AC02D /* Alamofire.swift */; };
 		B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443961A32E8F2000EC554 /* AppDelegate.swift */; };
 		B86443991A32E8F2000EC554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443981A32E8F2000EC554 /* ViewController.swift */; };
 		B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B864439A1A32E8F2000EC554 /* Main.storyboard */; };
@@ -32,9 +33,51 @@
 		B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */ = {isa = PBXBuildFile; fileRef = B86443D21A32EFF6000EC554 /* charA_greeting.json */; };
 		B86443D41A32EFF6000EC554 /* charA_greeting.json in Resources */ = {isa = PBXBuildFile; fileRef = B86443D21A32EFF6000EC554 /* charA_greeting.json */; };
 		B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443D51A32F075000EC554 /* TalkManagerTest.swift */; };
+		B88EFB2E1A346F0F0023E297 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */; };
+		B88EFB2F1A346F0F0023E297 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */; };
+		B88EFB321A346F6C0023E297 /* SleepVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */; };
+		B88EFB331A346F6C0023E297 /* SleepVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */; };
+		B8AF7C071A38336D00FDA346 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */; };
+		B8AF7C081A38336D00FDA346 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */; };
+		B8AF7C0B1A383E9600FDA346 /* SoundPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C0A1A383E9600FDA346 /* SoundPlayerTest.swift */; };
+		B8AF7C121A38407700FDA346 /* きらきら星.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C111A38407700FDA346 /* きらきら星.mp3 */; };
+		B8AF7C131A38407700FDA346 /* きらきら星.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C111A38407700FDA346 /* きらきら星.mp3 */; };
+		B8AF7C171A3846A600FDA346 /* voice02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C151A3846A600FDA346 /* voice02.m4a */; };
+		B8AF7C191A39773C00FDA346 /* 雫_添い寝_scene1.json in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C181A39773C00FDA346 /* 雫_添い寝_scene1.json */; };
+		B8AF7C231A397C9900FDA346 /* name01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C211A397C9900FDA346 /* name01.m4a */; };
+		B8AF7C241A397C9900FDA346 /* voice01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C221A397C9900FDA346 /* voice01.m4a */; };
+		B8AF7C311A39833800FDA346 /* 雫_name_m_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C2D1A39833800FDA346 /* 雫_name_m_01.m4a */; };
+		B8AF7C321A39833800FDA346 /* 雫_s1_r1_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C2E1A39833800FDA346 /* 雫_s1_r1_01.m4a */; };
+		B8AF7C331A39833800FDA346 /* 雫_s1_r1_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C2F1A39833800FDA346 /* 雫_s1_r1_02.m4a */; };
+		B8AF7C341A39833800FDA346 /* 雫_s1_r1_03.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C301A39833800FDA346 /* 雫_s1_r1_03.m4a */; };
+		B8AF7C361A39884C00FDA346 /* SleepVoiceManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C351A39884C00FDA346 /* SleepVoiceManagerTest.swift */; };
+		B8AF7C381A3999FB00FDA346 /* 書式ミス.json in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C371A3999FB00FDA346 /* 書式ミス.json */; };
+		B8AF7C3A1A39A46100FDA346 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C391A39A46100FDA346 /* JsonReader.swift */; };
+		B8AF7C3B1A39A46100FDA346 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C391A39A46100FDA346 /* JsonReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B860DCB01A3348D500CA828A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		B860DCB21A3348D500CA828A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		B860DCB41A3348F600CA828A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 		B86443A71A32E8F2000EC554 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B86443891A32E8F2000EC554 /* Project object */;
@@ -44,9 +87,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B860DCB61A3348FB00CA828A /* Copy Files (1 item) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B860DCB71A33491300CA828A /* Alamofire.framework in Copy Files (1 item) */,
+			);
+			name = "Copy Files (1 item)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B860DCA91A3347BD00CA828A /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherGetterTest.swift; sourceTree = "<group>"; };
-		B861061E1A330BB6002AC02D /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		B86443911A32E8F2000EC554 /* BedsideVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BedsideVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86443951A32E8F2000EC554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86443961A32E8F2000EC554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +124,22 @@
 		B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B86443D21A32EFF6000EC554 /* charA_greeting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = charA_greeting.json; sourceTree = "<group>"; };
 		B86443D51A32F075000EC554 /* TalkManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkManagerTest.swift; sourceTree = "<group>"; };
+		B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
+		B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepVoiceManager.swift; sourceTree = "<group>"; };
+		B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
+		B8AF7C0A1A383E9600FDA346 /* SoundPlayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayerTest.swift; sourceTree = "<group>"; };
+		B8AF7C111A38407700FDA346 /* きらきら星.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "きらきら星.mp3"; sourceTree = "<group>"; };
+		B8AF7C151A3846A600FDA346 /* voice02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice02.m4a; sourceTree = "<group>"; };
+		B8AF7C181A39773C00FDA346 /* 雫_添い寝_scene1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "雫_添い寝_scene1.json"; sourceTree = "<group>"; };
+		B8AF7C211A397C9900FDA346 /* name01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = name01.m4a; sourceTree = "<group>"; };
+		B8AF7C221A397C9900FDA346 /* voice01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice01.m4a; sourceTree = "<group>"; };
+		B8AF7C2D1A39833800FDA346 /* 雫_name_m_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_name_m_01.m4a"; sourceTree = "<group>"; };
+		B8AF7C2E1A39833800FDA346 /* 雫_s1_r1_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r1_01.m4a"; sourceTree = "<group>"; };
+		B8AF7C2F1A39833800FDA346 /* 雫_s1_r1_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r1_02.m4a"; sourceTree = "<group>"; };
+		B8AF7C301A39833800FDA346 /* 雫_s1_r1_03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r1_03.m4a"; sourceTree = "<group>"; };
+		B8AF7C351A39884C00FDA346 /* SleepVoiceManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepVoiceManagerTest.swift; sourceTree = "<group>"; };
+		B8AF7C371A3999FB00FDA346 /* 書式ミス.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "書式ミス.json"; sourceTree = "<group>"; };
+		B8AF7C391A39A46100FDA346 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +160,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B860DCAC1A3348D400CA828A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B860DCB11A3348D500CA828A /* Alamofire.framework */,
+				B860DCB31A3348D500CA828A /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B86443881A32E8F2000EC554 = {
 			isa = PBXGroup;
 			children = (
+				B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */,
 				B86443931A32E8F2000EC554 /* BedsideVoice */,
 				B86443A91A32E8F2000EC554 /* BedsideVoiceTests */,
 				B86443921A32E8F2000EC554 /* Products */,
@@ -124,6 +208,7 @@
 		B86443941A32E8F2000EC554 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8AF7C0C1A383EC000FDA346 /* music */,
 				B86443D11A32EFE7000EC554 /* scenario */,
 				B86443BB1A32E985000EC554 /* se */,
 				B86443BA1A32E97D000EC554 /* voice */,
@@ -135,9 +220,11 @@
 		B86443A91A32E8F2000EC554 /* BedsideVoiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				B8AF7C0A1A383E9600FDA346 /* SoundPlayerTest.swift */,
 				B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */,
 				B86443D51A32F075000EC554 /* TalkManagerTest.swift */,
 				B86443AC1A32E8F2000EC554 /* BedsideVoiceTests.swift */,
+				B8AF7C351A39884C00FDA346 /* SleepVoiceManagerTest.swift */,
 				B86443AA1A32E8F2000EC554 /* Supporting Files */,
 			);
 			path = BedsideVoiceTests;
@@ -154,6 +241,7 @@
 		B86443B61A32E95F000EC554 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -162,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				B86443CB1A32EED1000EC554 /* TalkManager.swift */,
+				B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */,
 				B86443B81A32E96C000EC554 /* Lib */,
 			);
 			name = Model;
@@ -171,9 +260,11 @@
 			isa = PBXGroup;
 			children = (
 				B86443BC1A32EAF4000EC554 /* SoundPlayer.swift */,
+				B8AF7C391A39A46100FDA346 /* JsonReader.swift */,
 				B86443C81A32EB39000EC554 /* FadeLabel.swift */,
 				B86443C21A32EB18000EC554 /* WeatherGetter.swift */,
 				B86443BF1A32EB0F000EC554 /* LocationGetter.swift */,
+				B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -181,8 +272,8 @@
 		B86443B91A32E974000EC554 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B860DCA91A3347BD00CA828A /* Alamofire.swift */,
 				B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */,
-				B861061E1A330BB6002AC02D /* Alamofire.swift */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -190,6 +281,10 @@
 		B86443BA1A32E97D000EC554 /* voice */ = {
 			isa = PBXGroup;
 			children = (
+				B8AF7C1A1A397C0100FDA346 /* 雫 */,
+				B8AF7C211A397C9900FDA346 /* name01.m4a */,
+				B8AF7C221A397C9900FDA346 /* voice01.m4a */,
+				B8AF7C151A3846A600FDA346 /* voice02.m4a */,
 			);
 			name = voice;
 			sourceTree = "<group>";
@@ -205,8 +300,29 @@
 			isa = PBXGroup;
 			children = (
 				B86443D21A32EFF6000EC554 /* charA_greeting.json */,
+				B8AF7C371A3999FB00FDA346 /* 書式ミス.json */,
+				B8AF7C181A39773C00FDA346 /* 雫_添い寝_scene1.json */,
 			);
 			name = scenario;
+			sourceTree = "<group>";
+		};
+		B8AF7C0C1A383EC000FDA346 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				B8AF7C111A38407700FDA346 /* きらきら星.mp3 */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
+		B8AF7C1A1A397C0100FDA346 /* 雫 */ = {
+			isa = PBXGroup;
+			children = (
+				B8AF7C2D1A39833800FDA346 /* 雫_name_m_01.m4a */,
+				B8AF7C2E1A39833800FDA346 /* 雫_s1_r1_01.m4a */,
+				B8AF7C2F1A39833800FDA346 /* 雫_s1_r1_02.m4a */,
+				B8AF7C301A39833800FDA346 /* 雫_s1_r1_03.m4a */,
+			);
+			name = "雫";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,10 +335,12 @@
 				B864438D1A32E8F2000EC554 /* Sources */,
 				B864438E1A32E8F2000EC554 /* Frameworks */,
 				B864438F1A32E8F2000EC554 /* Resources */,
+				B860DCB61A3348FB00CA828A /* Copy Files (1 item) */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B860DCB51A3348F600CA828A /* PBXTargetDependency */,
 			);
 			name = BedsideVoice;
 			productName = BedsideVoice;
@@ -281,6 +399,12 @@
 			mainGroup = B86443881A32E8F2000EC554;
 			productRefGroup = B86443921A32E8F2000EC554 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B860DCAC1A3348D400CA828A /* Products */;
+					ProjectRef = B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B86443901A32E8F2000EC554 /* BedsideVoice */,
@@ -289,13 +413,40 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B860DCB11A3348D500CA828A /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = B860DCB01A3348D500CA828A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B860DCB31A3348D500CA828A /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = B860DCB21A3348D500CA828A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B864438F1A32E8F2000EC554 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AF7C231A397C9900FDA346 /* name01.m4a in Resources */,
 				B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */,
+				B8AF7C311A39833800FDA346 /* 雫_name_m_01.m4a in Resources */,
+				B8AF7C331A39833800FDA346 /* 雫_s1_r1_02.m4a in Resources */,
+				B8AF7C171A3846A600FDA346 /* voice02.m4a in Resources */,
+				B8AF7C191A39773C00FDA346 /* 雫_添い寝_scene1.json in Resources */,
+				B8AF7C241A397C9900FDA346 /* voice01.m4a in Resources */,
 				B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */,
+				B8AF7C341A39833800FDA346 /* 雫_s1_r1_03.m4a in Resources */,
+				B8AF7C121A38407700FDA346 /* きらきら星.mp3 in Resources */,
+				B8AF7C381A3999FB00FDA346 /* 書式ミス.json in Resources */,
+				B8AF7C321A39833800FDA346 /* 雫_s1_r1_01.m4a in Resources */,
 				B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */,
 				B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */,
 			);
@@ -305,6 +456,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AF7C131A38407700FDA346 /* きらきら星.mp3 in Resources */,
 				B86443D41A32EFF6000EC554 /* charA_greeting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,13 +468,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AF7C3A1A39A46100FDA346 /* JsonReader.swift in Sources */,
+				B88EFB321A346F6C0023E297 /* SleepVoiceManager.swift in Sources */,
 				B86443991A32E8F2000EC554 /* ViewController.swift in Sources */,
 				B86443C91A32EB39000EC554 /* FadeLabel.swift in Sources */,
+				B88EFB2E1A346F0F0023E297 /* SleepViewController.swift in Sources */,
 				B86443C31A32EB18000EC554 /* WeatherGetter.swift in Sources */,
 				B86443CC1A32EED1000EC554 /* TalkManager.swift in Sources */,
 				B86443BD1A32EAF4000EC554 /* SoundPlayer.swift in Sources */,
 				B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */,
-				B861061F1A330BB6002AC02D /* Alamofire.swift in Sources */,
+				B860DCAA1A3347BD00CA828A /* Alamofire.swift in Sources */,
+				B8AF7C071A38336D00FDA346 /* DispatchUtil.swift in Sources */,
 				B86443CF1A32EEEC000EC554 /* SwiftyJSON.swift in Sources */,
 				B86443C01A32EB0F000EC554 /* LocationGetter.swift in Sources */,
 				B86443C61A32EB2C000EC554 /* Constants.swift in Sources */,
@@ -333,13 +489,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AF7C0B1A383E9600FDA346 /* SoundPlayerTest.swift in Sources */,
+				B8AF7C361A39884C00FDA346 /* SleepVoiceManagerTest.swift in Sources */,
+				B88EFB331A346F6C0023E297 /* SleepVoiceManager.swift in Sources */,
 				B86443C71A32EB2C000EC554 /* Constants.swift in Sources */,
 				B86443BE1A32EAF4000EC554 /* SoundPlayer.swift in Sources */,
+				B88EFB2F1A346F0F0023E297 /* SleepViewController.swift in Sources */,
 				B86443C41A32EB18000EC554 /* WeatherGetter.swift in Sources */,
 				B86443D01A32EEEC000EC554 /* SwiftyJSON.swift in Sources */,
+				B8AF7C3B1A39A46100FDA346 /* JsonReader.swift in Sources */,
 				B86443AD1A32E8F2000EC554 /* BedsideVoiceTests.swift in Sources */,
 				B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */,
 				B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */,
+				B8AF7C081A38336D00FDA346 /* DispatchUtil.swift in Sources */,
 				B86443CD1A32EED1000EC554 /* TalkManager.swift in Sources */,
 				B86443CA1A32EB39000EC554 /* FadeLabel.swift in Sources */,
 				B86443C11A32EB0F000EC554 /* LocationGetter.swift in Sources */,
@@ -349,6 +511,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B860DCB51A3348F600CA828A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = B860DCB41A3348F600CA828A /* PBXContainerItemProxy */;
+		};
 		B86443A81A32E8F2000EC554 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B86443901A32E8F2000EC554 /* BedsideVoice */;
