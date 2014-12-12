@@ -43,42 +43,37 @@ class SleepVoiceManager: NSObject {
     override init() {
         super.init()
         _charName = DEFAULT_CHARACTER
-        
-        //println("初期化されたよ")
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextVoice", name: "voicePlayEnded", object: nil)
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextScene", name: "sceneEnded", object: self)
-        /*
-        var nc :NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        nc.addObserverForName("voicePlayEnded", object: nil, queue: nil, usingBlock: {
-            (notification: NSNotification!) in
-            println("次の音声を再生します")
-            //self.playNextVoice()
-        })*/
-        /*
-        nc.addObserverForName("sceneEnded", object: self, queue: nil, usingBlock: {
-            (notification: NSNotification!) in
-            self.playNextScene()
-        })*/
     }
     
-    // 初期化
+    // 再生前の準備
     func prepareForPlayScene() {
         _files = [[String]]()
         _texts = [String]()
         _faces = [String]()
         if _scene == 0 {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextVoice", name: "voicePlayEnded", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextScene", name: "sceneEnded", object: nil)
         }
         
         _hasError = false
         _errorMessage = nil
     }
     
-    // 再生
+    // 最初から再生
     func play() {
         _scene = 0
         
         playNextScene() 
+    }
+    
+    // 一時停止
+    func pause() {
+        _soundPlayer.pauseVoice()
+    }
+    
+    // 再開
+    func resume() {
+        _soundPlayer.resumeVoice()
     }
     
     // 次のシーンを再生
@@ -203,8 +198,9 @@ class SleepVoiceManager: NSObject {
             // 番号を取得して名前ファイル名を決定
             let numMatch = tagStr.rangeOfString("\\d+", options: .RegularExpressionSearch)
             let numStr   = tagStr.substringWithRange(numMatch)
-// mの部分は変える必要あり
-            var nameFile = "\(_charName)_name_m_\(numStr)"
+// ↓の部分は設定情報から取得する必要あり
+var name = "お兄様"
+            var nameFile = "\(_charName)_name_\(name)_\(numStr)"
 
             if tagMatch.location == 0 {
                 files.append(nameFile)

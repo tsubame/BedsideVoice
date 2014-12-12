@@ -94,8 +94,8 @@ public class SoundPlayer: NSObject {
         nc.addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: _queuePlayer?.items().last, queue: nil, usingBlock: {
             (notification: NSNotification!) in
             
-            println("音声の再生が全部終了")
             self._queuePlayer?.removeAllItems()
+            //println("音声キューが空になりました")
             // 通知発行
             NSNotificationCenter.defaultCenter().postNotificationName("voicePlayEnded", object: nil)
         })

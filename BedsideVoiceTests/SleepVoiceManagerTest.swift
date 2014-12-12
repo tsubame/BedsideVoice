@@ -16,7 +16,6 @@ class SleepVoiceManagerTest: XCTestCase {
         super.setUp()
         _sut = SleepVoiceManager()
         _sut.setCharaName("雫")
-
     }
     
     override func tearDown() {
@@ -24,18 +23,38 @@ class SleepVoiceManagerTest: XCTestCase {
         super.tearDown()
     }
     
+    func testPause() {
+        var expectation = self.expectationWithDescription("")
+        //var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
+        
+        _sut.playNextScene()
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)),
+            dispatch_get_main_queue(), {
+                self._sut.pause()
+        })
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)),
+            dispatch_get_main_queue(), {
+                self._sut.resume()
+                expectation.fulfill()
+                XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
+        })
+        
+        self.waitForExpectationsWithTimeout(2.1, handler: nil)
+    }
+    
     func testPlayNextScene() {
         //var expectation = self.expectationWithDescription("")
         var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
         
         _sut.playNextScene()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(7 * NSEC_PER_SEC)),
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)),
             dispatch_get_main_queue(), {
                 XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
                 //expectation.fulfill()
         })
 
-        self.waitForExpectationsWithTimeout(40.0, handler: nil)
+        self.waitForExpectationsWithTimeout(20.1, handler: nil)
     }
     
     func testSelectVoicesScene1() {
