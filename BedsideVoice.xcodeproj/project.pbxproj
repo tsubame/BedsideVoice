@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82A5CB81A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB51A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a */; };
+		B82A5CB91A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB61A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a */; };
+		B82A5CBA1A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB71A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a */; };
+		B82A5CBF1A3AC502009C7BE7 /* 雫_s1_r3_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CBD1A3AC502009C7BE7 /* 雫_s1_r3_02.m4a */; };
+		B82A5CC11A3AC783009C7BE7 /* 雫_s1_r3_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CC01A3AC783009C7BE7 /* 雫_s1_r3_01.m4a */; };
+		B82A5CC31A3AD300009C7BE7 /* 雫_name_m_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CC21A3AD300009C7BE7 /* 雫_name_m_02.m4a */; };
+		B82A5CC61A3AD309009C7BE7 /* 雫_s1_r4_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CC41A3AD309009C7BE7 /* 雫_s1_r4_01.m4a */; };
+		B82A5CC71A3AD309009C7BE7 /* 雫_s1_r4_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CC51A3AD309009C7BE7 /* 雫_s1_r4_02.m4a */; };
 		B860DCAA1A3347BD00CA828A /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B860DCA91A3347BD00CA828A /* Alamofire.swift */; };
 		B860DCB71A33491300CA828A /* Alamofire.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = B860DCB11A3348D500CA828A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */; };
@@ -102,6 +110,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B82A5CB51A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_01.m4a"; sourceTree = "<group>"; };
+		B82A5CB61A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_02.m4a"; sourceTree = "<group>"; };
+		B82A5CB71A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_03.m4a"; sourceTree = "<group>"; };
+		B82A5CBD1A3AC502009C7BE7 /* 雫_s1_r3_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r3_02.m4a"; sourceTree = "<group>"; };
+		B82A5CC01A3AC783009C7BE7 /* 雫_s1_r3_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r3_01.m4a"; sourceTree = "<group>"; };
+		B82A5CC21A3AD300009C7BE7 /* 雫_name_m_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_name_m_02.m4a"; sourceTree = "<group>"; };
+		B82A5CC41A3AD309009C7BE7 /* 雫_s1_r4_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r4_01.m4a"; sourceTree = "<group>"; };
+		B82A5CC51A3AD309009C7BE7 /* 雫_s1_r4_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r4_02.m4a"; sourceTree = "<group>"; };
 		B860DCA91A3347BD00CA828A /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		B860DCAB1A3348D400CA828A /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherGetterTest.swift; sourceTree = "<group>"; };
@@ -318,9 +334,17 @@
 			isa = PBXGroup;
 			children = (
 				B8AF7C2D1A39833800FDA346 /* 雫_name_m_01.m4a */,
+				B82A5CC21A3AD300009C7BE7 /* 雫_name_m_02.m4a */,
 				B8AF7C2E1A39833800FDA346 /* 雫_s1_r1_01.m4a */,
 				B8AF7C2F1A39833800FDA346 /* 雫_s1_r1_02.m4a */,
 				B8AF7C301A39833800FDA346 /* 雫_s1_r1_03.m4a */,
+				B82A5CB51A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a */,
+				B82A5CB61A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a */,
+				B82A5CB71A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a */,
+				B82A5CC01A3AC783009C7BE7 /* 雫_s1_r3_01.m4a */,
+				B82A5CBD1A3AC502009C7BE7 /* 雫_s1_r3_02.m4a */,
+				B82A5CC41A3AD309009C7BE7 /* 雫_s1_r4_01.m4a */,
+				B82A5CC51A3AD309009C7BE7 /* 雫_s1_r4_02.m4a */,
 			);
 			name = "雫";
 			sourceTree = "<group>";
@@ -435,17 +459,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82A5CB91A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a in Resources */,
 				B8AF7C231A397C9900FDA346 /* name01.m4a in Resources */,
+				B82A5CC11A3AC783009C7BE7 /* 雫_s1_r3_01.m4a in Resources */,
 				B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */,
 				B8AF7C311A39833800FDA346 /* 雫_name_m_01.m4a in Resources */,
 				B8AF7C331A39833800FDA346 /* 雫_s1_r1_02.m4a in Resources */,
+				B82A5CBF1A3AC502009C7BE7 /* 雫_s1_r3_02.m4a in Resources */,
+				B82A5CC61A3AD309009C7BE7 /* 雫_s1_r4_01.m4a in Resources */,
 				B8AF7C171A3846A600FDA346 /* voice02.m4a in Resources */,
 				B8AF7C191A39773C00FDA346 /* 雫_添い寝_scene1.json in Resources */,
+				B82A5CB81A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a in Resources */,
 				B8AF7C241A397C9900FDA346 /* voice01.m4a in Resources */,
+				B82A5CC31A3AD300009C7BE7 /* 雫_name_m_02.m4a in Resources */,
 				B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */,
+				B82A5CC71A3AD309009C7BE7 /* 雫_s1_r4_02.m4a in Resources */,
 				B8AF7C341A39833800FDA346 /* 雫_s1_r1_03.m4a in Resources */,
 				B8AF7C121A38407700FDA346 /* きらきら星.mp3 in Resources */,
 				B8AF7C381A3999FB00FDA346 /* 書式ミス.json in Resources */,
+				B82A5CBA1A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a in Resources */,
 				B8AF7C321A39833800FDA346 /* 雫_s1_r1_01.m4a in Resources */,
 				B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */,
 				B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */,

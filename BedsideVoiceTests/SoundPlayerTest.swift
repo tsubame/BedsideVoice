@@ -55,6 +55,29 @@ class SoundPlayerTest: XCTestCase {
         self.waitForExpectationsWithTimeout(1.2, handler: nil)
     }
     
+    func testPlayVoicesNoFile() {
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "voicePlayEnded", name: "voicePlayEnded", object: nil)
+        
+        var files = ["存在しないファイル", "voice01"]
+        var expectation = self.expectationWithDescription("")
+        //var wait = self.expectationForNotification("voicePlayEnded", object: nil, handler: nil)
+        
+        //_soundPlayer._voiceVolume = 0
+        _soundPlayer.playVoices(files)
+        XCTAssertEqual(self._soundPlayer.getErrorCode(), SoundPlayerErrorCode.FileNotFound, "エラーがあること")
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+            expectation.fulfill()
+        })
+        
+        /*
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+        expectation.fulfill()
+        })*/
+        self.waitForExpectationsWithTimeout(1.2, handler: nil)
+    }
+    
+    /*
     // 間隔をあけてボイスを再生
     func testPlayVoicesWithGap() {
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "voicePlayEnded", name: "voicePlayEnded", object: nil)
@@ -94,7 +117,7 @@ class SoundPlayerTest: XCTestCase {
                 expectation.fulfill()
         })
         self.waitForExpectationsWithTimeout(1.0, handler: nil)
-    }
+    }*/
     
     // 音楽が再生中か
     func testIsBgmPlaying() {
@@ -226,7 +249,6 @@ class SoundPlayerTest: XCTestCase {
         self.waitForExpectationsWithTimeout(1.0, handler: nil)
     }
     
-    /*
     // 音楽再生
     func testPlayBgm() {
         var fileName = "きらきら星"
@@ -244,7 +266,7 @@ class SoundPlayerTest: XCTestCase {
         XCTAssertEqual(_soundPlayer.getErrorCode(), SoundPlayerErrorCode.NoError, "エラーがないこと")
         NSThread.sleepForTimeInterval(0.2)
     }
-    */
+
     /*
     func testPlayVoice() {
         var fileName = "メールが届いています"

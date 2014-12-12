@@ -16,11 +16,12 @@ class SleepVoiceManager: NSObject {
     // 添い寝ボイスのどの段階か　セリフの大きなくくりごとに1増やす
     var _scene: Int = 0
     
-    var _texts     = [String]()
+    // 音声のテキストの配列
+    var _texts = [String]()
     // ファイルネームの配列
     var _files: [[String]] = [[String]]()
-    //
-    var _faces     = [String]()
+    // それぞれの音声の時の表情
+    var _faces = [String]()
     
     // 呼び出し元クラスの画像
     var _imageView: UIImageView?
@@ -42,34 +43,53 @@ class SleepVoiceManager: NSObject {
     override init() {
         super.init()
         _charName = DEFAULT_CHARACTER
+        
+        //println("初期化されたよ")
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextVoice", name: "voicePlayEnded", object: nil)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextScene", name: "sceneEnded", object: self)
+        /*
+        var nc :NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        nc.addObserverForName("voicePlayEnded", object: nil, queue: nil, usingBlock: {
+            (notification: NSNotification!) in
+            println("次の音声を再生します")
+            //self.playNextVoice()
+        })*/
+        /*
+        nc.addObserverForName("sceneEnded", object: self, queue: nil, usingBlock: {
+            (notification: NSNotification!) in
+            self.playNextScene()
+        })*/
     }
     
     // 初期化
-    func prepareForPlay() {
-        _scene = 0
+    func prepareForPlayScene() {
         _files = [[String]]()
         _texts = [String]()
         _faces = [String]()
+        if _scene == 0 {
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextVoice", name: "voicePlayEnded", object: nil)
+        }
+        
         _hasError = false
         _errorMessage = nil
     }
     
     // 再生
     func play() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextVoice", name: "voicePlayEnded", object: _soundPlayer)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playNextScene", name: "sceneEnded", object: _soundPlayer)
-        prepareForPlay()
+        _scene = 0
         
-        playNextVoice()
+        playNextScene() 
     }
     
     // 次のシーンを再生
     func playNextScene() {
+        prepareForPlayScene()
         _scene++
         
         switch _scene {
             case 1:
                 selectVoicesScene1()
+                playNextVoice()
                 break
             default:
                 break
@@ -77,12 +97,18 @@ class SleepVoiceManager: NSObject {
     }
     
     func playNextVoice() {
+        println(_files)
         if _files.count == 0 {
+            println("シーンの音声をすべて再生しました")
             NSNotificationCenter.defaultCenter().postNotificationName("sceneEnded", object: nil)
             return
         }
         
         var files: [String] = _files.removeAtIndex(0)
+        var text = _texts.removeAtIndex(0)
+        println(text)
+
+        
         _soundPlayer.playVoices(files)
     }
     
@@ -147,7 +173,7 @@ class SleepVoiceManager: NSObject {
         
         for i in 0..<texts.count {
             var dict = [String: String]()
-            // ファイル番号を取得 01から始まる文字列
+            // ファイル番号を取得 01から始まる2桁の文字列
             var fileNum = i + 1
             var numStr = "\(fileNum)"
             if fileNum < 10 {
@@ -156,7 +182,7 @@ class SleepVoiceManager: NSObject {
             // ファイル名
             var file = "\(_charName)_s\(scene)_\(key)_\(numStr)"
             var text = texts[i].stringValue!
-            var face = getFacesFromTextWithTag(&text)
+            var face = getFaceFromTextWithTag(&text)
             var files = getVoiceFilesFromTextWithName(&text, file: file)
             
             _files.append(files)
@@ -174,10 +200,10 @@ class SleepVoiceManager: NSObject {
         var tagMatch = (text as NSString).rangeOfString(pattern, options: .RegularExpressionSearch)
         if 0 < tagMatch.length {
             let tagStr   = (text as NSString).substringWithRange(tagMatch) as NSString
-            // 番号を取得
+            // 番号を取得して名前ファイル名を決定
             let numMatch = tagStr.rangeOfString("\\d+", options: .RegularExpressionSearch)
             let numStr   = tagStr.substringWithRange(numMatch)
-            // 名前ファイル名
+// mの部分は変える必要あり
             var nameFile = "\(_charName)_name_m_\(numStr)"
 
             if tagMatch.location == 0 {
@@ -191,11 +217,10 @@ class SleepVoiceManager: NSObject {
             // タグ内の括弧部分だけをテキストに反映
             var nameStrMatch = tagStr.rangeOfString("\\(.+\\)", options: .RegularExpressionSearch)
             if 0 < nameStrMatch.length {
-                // 括弧つきのテキストを取得
-                var nameStrWithPar = tagStr.substringWithRange(nameStrMatch)
                 // 括弧の中身を取得
+                var nameStrWithPar = tagStr.substringWithRange(nameStrMatch)
                 var nameStr = (nameStrWithPar as NSString).substringWithRange(NSRange(location: 1, length: nameStrWithPar.utf16Count - 2))
-                text  = text.stringByReplacingOccurrencesOfString(tagStr, withString: nameStr, options: nil, range: nil)
+                text = text.stringByReplacingOccurrencesOfString(tagStr, withString: nameStr, options: nil, range: nil)
             }
         } else {
             files.append(file)
@@ -205,7 +230,7 @@ class SleepVoiceManager: NSObject {
     }
     
     // テキストから【表情:】タグを取り出して文字列で返す
-    func getFacesFromTextWithTag(inout text: String) -> String {
+    func getFaceFromTextWithTag(inout text: String) -> String {
         var face = "通"
         if 0 < _faces.count {
             face = _faces[_faces.count - 1]

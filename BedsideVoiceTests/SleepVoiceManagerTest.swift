@@ -16,11 +16,26 @@ class SleepVoiceManagerTest: XCTestCase {
         super.setUp()
         _sut = SleepVoiceManager()
         _sut.setCharaName("雫")
+
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testPlayNextScene() {
+        //var expectation = self.expectationWithDescription("")
+        var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
+        
+        _sut.playNextScene()
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(7 * NSEC_PER_SEC)),
+            dispatch_get_main_queue(), {
+                XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
+                //expectation.fulfill()
+        })
+
+        self.waitForExpectationsWithTimeout(40.0, handler: nil)
     }
     
     func testSelectVoicesScene1() {
@@ -38,7 +53,7 @@ class SleepVoiceManagerTest: XCTestCase {
         var json = _sut.getJsonForScene(1)
         XCTAssertFalse(_sut.hasError(), "エラーがないこと")
         //XCTAssertNotNil(json)
-        println(json)
+        //println(json)
         json = _sut.getJsonForScene(999)
         XCTAssertTrue(_sut.hasError(), "エラーがあること")
         //println(json)

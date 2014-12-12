@@ -86,7 +86,7 @@ public class SoundPlayer: NSObject {
     func playVoices(files: [String]) {
         _queuePlayer = makeAVQuePlayer(files)
         if _errorCode != SoundPlayerErrorCode.NoError {
-            return
+            //return
         }
 
         // 全ての再生終了時に実行
@@ -102,6 +102,8 @@ public class SoundPlayer: NSObject {
         
         _queuePlayer?.volume = _voiceVolume
         _queuePlayer?.play()
+        
+        println("次の音声を再生します。 \(files)")
     }
     
     // 音声の停止
@@ -360,7 +362,8 @@ public class SoundPlayer: NSObject {
                 _errorMessage = "=== error! === ファイルがありません！: " + fileName
                 println(_errorMessage!)
                 
-                return nil
+                continue
+                //return nil
             }
 
             let url  = NSURL.fileURLWithPath(path!)
