@@ -31,28 +31,40 @@ class SoundPlayerTest: XCTestCase {
         println("ボイスの再生が終わったって通知来たよー＼(^o^)／")
     }
     
-    
-    // 複数のボイスを連続再生
-    func testPlayVoices() {
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "voicePlayEnded", name: "voicePlayEnded", object: nil)
-        
-        var files = ["name01", "voice01"]
+    func testGetAudioLevel() {
+        var file = "testVoice2"
         var expectation = self.expectationWithDescription("")
-        //var wait = self.expectationForNotification("voicePlayEnded", object: nil, handler: nil)
+        self._soundPlayer.getAudioLevel(file)
         
-        _soundPlayer._voiceVolume = 0
-        _soundPlayer.playVoices(files)
-        XCTAssertEqual(self._soundPlayer.getErrorCode(), SoundPlayerErrorCode.NoError, "エラーがないこと")
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(24 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
             expectation.fulfill()
         })
         
         /*
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            expectation.fulfill()
+        expectation.fulfill()
         })*/
-        self.waitForExpectationsWithTimeout(1.2, handler: nil)
+        self.waitForExpectationsWithTimeout(25.2, handler: nil)
+    }
+    
+    // 複数のボイスを連続再生
+    func testPlayVoices() {
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "voicePlayEnded", name: "voicePlayEnded", object: nil)
+        
+        var files = ["name01", "voice01", "voice02"]
+        //var expectation = self.expectationWithDescription("")
+        var wait = self.expectationForNotification("voicePlayEnded", object: nil, handler: nil)
+        
+        //_soundPlayer._voiceVolume = 0
+        _soundPlayer.playVoices(files)
+        //_soundPlayer.playVoicesOrg(files)
+        XCTAssertEqual(self._soundPlayer.getErrorCode(), SoundPlayerErrorCode.NoError, "エラーがないこと")
+        
+        delay(0.2, {
+            //expectation.fulfill()
+        })
+
+        self.waitForExpectationsWithTimeout(0.4, handler: nil)
     }
     
     func testPlayVoicesNoFile() {
@@ -66,7 +78,7 @@ class SoundPlayerTest: XCTestCase {
         _soundPlayer.playVoices(files)
         XCTAssertEqual(self._soundPlayer.getErrorCode(), SoundPlayerErrorCode.FileNotFound, "エラーがあること")
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
+        delay(4.0, {
             expectation.fulfill()
         })
         
@@ -74,7 +86,7 @@ class SoundPlayerTest: XCTestCase {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(10.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
         expectation.fulfill()
         })*/
-        self.waitForExpectationsWithTimeout(1.2, handler: nil)
+        self.waitForExpectationsWithTimeout(5.2, handler: nil)
     }
     
     /*
@@ -169,10 +181,16 @@ class SoundPlayerTest: XCTestCase {
     }
     
     func testPlayVoice() {
+        var nc :NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        nc.addObserverForName("audioPlayerDidFinishPlaying", object: nil, queue: nil, usingBlock: {
+            (notification: NSNotification!) in
+            println("audioPlayerDidFinishPlaying.")
+        })
+        
         var expectation = self.expectationWithDescription("fetch posts")
         
-        var fileName = "name0"
-        _soundPlayer.setVoiceVolume(0)
+        var fileName = "name04"
+        //_soundPlayer.setVoiceVolume(0)
         _soundPlayer.playVoice(fileName)
         XCTAssertEqual(self._soundPlayer.getErrorCode(), SoundPlayerErrorCode.FileNotFound, "エラーがあること")
         

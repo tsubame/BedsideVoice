@@ -28,37 +28,34 @@ class SleepVoiceManagerTest: XCTestCase {
         //var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
         
         _sut.playNextScene()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)),
-            dispatch_get_main_queue(), {
+        delay(0.01, {
                 self._sut.pause()
         })
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)),
-            dispatch_get_main_queue(), {
+        delay(0.05, {
                 self._sut.resume()
                 expectation.fulfill()
                 XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
         })
         
-        self.waitForExpectationsWithTimeout(2.1, handler: nil)
+        self.waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testPlayNextScene() {
-        //var expectation = self.expectationWithDescription("")
-        var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
+        var expectation = self.expectationWithDescription("")
+        //var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
         
         _sut.playNextScene()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)),
-            dispatch_get_main_queue(), {
+        delay(0.1, {
                 XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
-                //expectation.fulfill()
+            expectation.fulfill()
         })
 
-        self.waitForExpectationsWithTimeout(20.1, handler: nil)
+        self.waitForExpectationsWithTimeout(0.2, handler: nil)
     }
     
     func testSelectVoicesScene1() {
-        for i in 0...10 {
+        for i in 0...1 {
             _sut = SleepVoiceManager()
             _sut.selectVoicesScene1()
             XCTAssertFalse(_sut.hasError(), "エラーがないこと")

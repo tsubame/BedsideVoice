@@ -14,22 +14,28 @@ enum SoundPlayerErrorCode:Int {
     case FileNotFound
 }
 
-public class SoundPlayer: NSObject {
+public class SoundPlayer: NSObject, AVAudioPlayerDelegate {
 
     // 音声再生用
     //var _voicePlayer: AVAudioPlayer?
     
     // BGM再生用
     var _bgmPlayer: AVAudioPlayer?
-    // 音声再生用キュー
+    // 複数音声再生用キュー
     var _queuePlayer: AVQueuePlayer?
+    // 音声再生用
+    var _voicePlayer: AVAudioPlayer?
+    
     // SE再生用
     var _sePlayers = [AVAudioPlayer]()
     // 無音再生用
     var _nosoundPlayer: AVAudioPlayer?
     
+    // 複数のボイスを連続再生する際のキュー
+    var _voiceQue = [String]()
+    
     // エラーメッセージ
-    var _errorMessage: String?
+    var _errorMessage: String = ""
     // エラーコード
     var _errorCode: SoundPlayerErrorCode = SoundPlayerErrorCode.NoError
     
@@ -72,22 +78,28 @@ public class SoundPlayer: NSObject {
     
     // 単一の音声を再生
     func playVoice(fileName: String) {
-        if _queuePlayer? != nil {
-            _queuePlayer?.pause()
+        _voicePlayer = makeAudioPlayer(fileName)
+        if _voicePlayer == nil {
+            audioPlayerDidFinishPlaying(_voicePlayer, successfully: false)
+            return
         }
         
-        var fileNames = [String]()
-        fileNames.append(fileName)
-        
-        playVoices(fileNames)
+        _voicePlayer?.delegate = self
+        _voicePlayer?.volume = _voiceVolume
+        _voicePlayer?.meteringEnabled = true
+        _voicePlayer?.play()
     }
     
     // 複数の音声を連続再生 音声間の間隔を開けない
     func playVoices(files: [String]) {
+        println("次の音声を再生します。 \(files)")
+        _voiceQue = files
+        var file = _voiceQue.removeAtIndex(0)
+        playVoice(file)
+    }
+    
+    func playVoicesOrg(files: [String]) {
         _queuePlayer = makeAVQuePlayer(files)
-        if _errorCode != SoundPlayerErrorCode.NoError {
-            //return
-        }
 
         // 全ての再生終了時に実行
         let nc = NSNotificationCenter.defaultCenter()
@@ -95,7 +107,6 @@ public class SoundPlayer: NSObject {
             (notification: NSNotification!) in
             
             self._queuePlayer?.removeAllItems()
-            //println("音声キューが空になりました")
             // 通知発行
             NSNotificationCenter.defaultCenter().postNotificationName("voicePlayEnded", object: nil)
         })
@@ -104,6 +115,28 @@ public class SoundPlayer: NSObject {
         _queuePlayer?.play()
         
         println("次の音声を再生します。 \(files)")
+    }
+    
+    // 音声レベルを取得
+    func getVoiceLevel() -> Float {
+        _voicePlayer?.updateMeters()
+        var cTmp = _voicePlayer?.numberOfChannels
+        var channels = cTmp!
+        
+        var tmp = self._voicePlayer?.averagePowerForChannel(0)
+        var avLevel = tmp! +  160.0
+        
+        return avLevel
+    }
+    
+    // 口パク用 音声レベルが一定以上かを判定
+    func isTalkingVoiceLevel(threshold: Float = 130.0) -> Bool {
+        var level = getVoiceLevel()
+        if threshold < level {
+            return true
+        }
+        
+        return false
     }
     
     // 音声の停止
@@ -134,6 +167,7 @@ public class SoundPlayer: NSObject {
     
     // 音声が再生中か
     func isVoicePlaying() -> Bool{
+        /*
         if _queuePlayer == nil {
             return false
         }
@@ -144,8 +178,18 @@ public class SoundPlayer: NSObject {
                 return true
             }
         }
-        
         return false
+        */
+        if _voicePlayer == nil {
+            return false
+        }
+        if 0 < _voiceQue.count {
+            return true
+        }
+        
+        let isPlaying = _voicePlayer?.playing
+        
+        return isPlaying!
     }
     
     
@@ -293,6 +337,56 @@ public class SoundPlayer: NSObject {
         })
     }
 
+    var timer: NSTimer?
+    var tl = 0.0
+    var ti = 0.05
+    
+    func getAudioLevel(fileName: String) {
+        var error: NSError?
+        //AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: &error)
+        _voicePlayer = makeAudioPlayer(fileName)
+        _voicePlayer?.meteringEnabled = true
+        _voicePlayer?.play()
+
+        //println(_bgmPlayer?.numberOfChannels)
+        
+        //_queuePlayer?.
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(ti, target: self, selector: "monitorVoiceLevel:", userInfo: nil, repeats: true)
+        
+        delay(21.0, {
+            self.timer?.invalidate()
+            self.timer = nil
+        })
+    }
+    
+    func monitorVoiceLevel(timer: NSTimer) {
+        self._voicePlayer?.updateMeters()
+        var cTmp = _voicePlayer?.numberOfChannels
+        var channels = cTmp!
+        
+        var tmp = self._voicePlayer?.averagePowerForChannel(0)
+        var avLevelL = tmp! +  160.0
+        tmp = self._voicePlayer?.averagePowerForChannel(1)
+        var avLevelR = tmp! +  160.0
+        
+        var threshold: Float = 130.0
+        
+        if avLevelL < threshold && avLevelR < threshold {
+            println("L: \(avLevelL) R: \(avLevelR) ========= ")
+        } else {
+            println("L: \(avLevelL) R: \(avLevelR) ")
+        }
+        
+        tl += ti
+
+        /*
+        for i in 0..<channels {
+            var tmp = self._voicePlayer?.peakPowerForChannel(i)
+            var avLevel = tmp! +  160.0
+            println("ch\(i): \(avLevel)")
+        }*/
+    }
     
     
     // エラーメッセージを返す
@@ -333,13 +427,13 @@ public class SoundPlayer: NSObject {
         var path = NSBundle.mainBundle().pathForResource(fileName, ofType: "")
         if path == nil {
             _errorCode = SoundPlayerErrorCode.FileNotFound
-            _errorMessage = "=== error! === ファイルがありません！: " + fileName
-            println(_errorMessage!)
+            _errorMessage += "=== error! === ファイルがありません！: " + fileName + "\n"
+            println(_errorMessage)
 
             return nil
         }
-        _errorCode = SoundPlayerErrorCode.NoError
-        _errorMessage = nil
+        //_errorCode = SoundPlayerErrorCode.NoError
+        //_errorMessage = nil
         let url  = NSURL.fileURLWithPath(path!)
 
         return AVAudioPlayer(contentsOfURL: url, error: nil)
@@ -349,7 +443,7 @@ public class SoundPlayer: NSObject {
     func makeAVQuePlayer(files:[String]) -> AVQueuePlayer? {
         var items = [AVPlayerItem]()
         _errorCode    = SoundPlayerErrorCode.NoError
-        _errorMessage = nil
+        //_errorMessage = ""
         
         for fileName in files {
             // 拡張子を補う
@@ -359,8 +453,8 @@ public class SoundPlayer: NSObject {
             var path = NSBundle.mainBundle().pathForResource(fullFileName, ofType: "")
             if path == nil {
                 _errorCode = SoundPlayerErrorCode.FileNotFound
-                _errorMessage = "=== error! === ファイルがありません！: " + fileName
-                println(_errorMessage!)
+                _errorMessage += "=== error! === ファイルがありません！: " + fileName + "\n"
+                println(_errorMessage)
                 
                 continue
                 //return nil
@@ -372,6 +466,23 @@ public class SoundPlayer: NSObject {
         }
         
         return AVQueuePlayer(items: items)
+    }
+    
+    //===========================================================
+    // AVAudioPlayerDelegate
+    //===========================================================
+    
+    public func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+        println("audioPlayerDidFinishPlaying.")
+        if _voicePlayer == player {
+            if _voiceQue.count == 0 {
+                println("ボイスキューの再生が終わりました。")
+                NSNotificationCenter.defaultCenter().postNotificationName("voicePlayEnded", object: nil)
+            } else {
+                var file = _voiceQue.removeAtIndex(0)
+                playVoice(file)
+            }
+        }
     }
     
 }

@@ -12,20 +12,12 @@ let CHARACTERS    = []
 let DEFAULT_CHARACTER = "雫"
 
 
-
 // BGMのボリューム
 let DEFAULT_BGM_VOLUME: Float = 0.05
 // SEのボリューム
 let DEFAULT_SE_VOLUME: Float = 0.5
 // 音声のボリューム
 let DEFAULT_VOICE_VOLUME: Float = 1.0
-
-
-// モーニングコール中にBGMを流すか
-//let PlAYS_BGM_IN_MN = true
-//// モーニングコールのBGM
-//let BGM_IN_MN = "loop_02.mp3"
-
 
 // 無音用サウンド
 let NOSOUND_FILE = "無音"// "autumn"//"nosound.mp3"
@@ -37,15 +29,6 @@ let NOSOUND_FILE = "無音"// "autumn"//"nosound.mp3"
 // ローカル通知アクション
 //let ALARM_NOTIF_ACTION = "起動"
 
-//　デフォルトの着信音
-//let DEFAULT_RINGTONE = "着信音.mp3"
-//let DEFAULT_CALL_SOUND = "着信音.mp3"
-// 電話に出る音
-//let RESPOND_PHONE_SE = "電話ピッ.mp3"
-// 着信音のボリューム
-//let DEFAULT_RINGTONE_VOLUME: Float = 0.8
-// 着信音の繰り返し回数
-//let RINGTONE_LOOP_COUNT = 30
 
 //===========================================================
 // トップレベルで使える関数
@@ -53,17 +36,14 @@ let NOSOUND_FILE = "無音"// "autumn"//"nosound.mp3"
 
 import Foundation
 
-// Double型を指定できる dispatch_after   etc. delay(2.0, {})
-
+// Double型を指定できる dispatch_after   （使い方）delay(2.0, { println("test.") })
 func delay(delay:Double, closure:()->()) {
-/*
     dispatch_after(
         dispatch_time(
             DISPATCH_TIME_NOW,
             Int64(delay * Double(NSEC_PER_SEC))
         ),
         dispatch_get_main_queue(), closure)
-*/
 }
 
 // 乱数取得

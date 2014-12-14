@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 class SleepVoiceManager: NSObject {
 
+    // ランダムイベントのキーの接頭辞
+    let RANDOM_EVENTS_KEY_PREFIX = "r"
+    
     // キャラクター
     var _charName = ""
-    
     // 添い寝ボイスのどの段階か　セリフの大きなくくりごとに1増やす
     var _scene: Int = 0
     
@@ -36,8 +38,6 @@ class SleepVoiceManager: NSObject {
     // エラーメッセージ
     var _errorMessage: String?
     
-    // ランダムイベントのキーの接頭辞
-    let RANDOM_EVENTS_KEY_PREFIX = "r"
     
     
     override init() {
