@@ -50,6 +50,7 @@ func delay(delay:Double, closure:()->()) {
 func rand(num: Int) -> Int {
     var result:Int
     result = Int(arc4random() % UInt32(num))
+    
     return result
 }
 

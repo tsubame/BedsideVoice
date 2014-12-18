@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8057FB01A42C75A004A2A0B /* 着物女性_通_m2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8057FAB1A42C75A004A2A0B /* 着物女性_通_m2.png */; };
+		B8057FB11A42C75A004A2A0B /* 着物女性_通_m1.png in Resources */ = {isa = PBXBuildFile; fileRef = B8057FAC1A42C75A004A2A0B /* 着物女性_通_m1.png */; };
+		B8057FB21A42C75A004A2A0B /* 着物女性_通_e1.png in Resources */ = {isa = PBXBuildFile; fileRef = B8057FAD1A42C75A004A2A0B /* 着物女性_通_e1.png */; };
+		B8057FB31A42C75A004A2A0B /* 着物女性_通_e2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8057FAE1A42C75A004A2A0B /* 着物女性_通_e2.png */; };
+		B8057FB41A42C75A004A2A0B /* 着物女性_通.png in Resources */ = {isa = PBXBuildFile; fileRef = B8057FAF1A42C75A004A2A0B /* 着物女性_通.png */; };
+		B8057FB61A42C8DB004A2A0B /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8057FB51A42C8DB004A2A0B /* RoomViewController.swift */; };
+		B8057FB71A42C8DB004A2A0B /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8057FB51A42C8DB004A2A0B /* RoomViewController.swift */; };
 		B82A5CB81A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB51A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a */; };
 		B82A5CB91A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB61A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a */; };
 		B82A5CBA1A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B82A5CB71A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a */; };
@@ -22,7 +29,6 @@
 		B860DCB71A33491300CA828A /* Alamofire.framework in Copy Files (1 item) */ = {isa = PBXBuildFile; fileRef = B860DCB11A3348D500CA828A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B861061C1A3307B7002AC02D /* WeatherGetterTest.swift */; };
 		B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443961A32E8F2000EC554 /* AppDelegate.swift */; };
-		B86443991A32E8F2000EC554 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86443981A32E8F2000EC554 /* ViewController.swift */; };
 		B864439C1A32E8F2000EC554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B864439A1A32E8F2000EC554 /* Main.storyboard */; };
 		B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B864439D1A32E8F2000EC554 /* Images.xcassets */; };
 		B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B864439F1A32E8F2000EC554 /* LaunchScreen.xib */; };
@@ -113,6 +119,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B8057FAB1A42C75A004A2A0B /* 着物女性_通_m2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "着物女性_通_m2.png"; sourceTree = "<group>"; };
+		B8057FAC1A42C75A004A2A0B /* 着物女性_通_m1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "着物女性_通_m1.png"; sourceTree = "<group>"; };
+		B8057FAD1A42C75A004A2A0B /* 着物女性_通_e1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "着物女性_通_e1.png"; sourceTree = "<group>"; };
+		B8057FAE1A42C75A004A2A0B /* 着物女性_通_e2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "着物女性_通_e2.png"; sourceTree = "<group>"; };
+		B8057FAF1A42C75A004A2A0B /* 着物女性_通.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "着物女性_通.png"; sourceTree = "<group>"; };
+		B8057FB51A42C8DB004A2A0B /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		B82A5CB51A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_01.m4a"; sourceTree = "<group>"; };
 		B82A5CB61A3AC3E6009C7BE7 /* 雫_s1_r2_02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_02.m4a"; sourceTree = "<group>"; };
 		B82A5CB71A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雫_s1_r2_03.m4a"; sourceTree = "<group>"; };
@@ -130,7 +142,6 @@
 		B86443911A32E8F2000EC554 /* BedsideVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BedsideVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86443951A32E8F2000EC554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86443961A32E8F2000EC554 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B86443981A32E8F2000EC554 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B864439B1A32E8F2000EC554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B864439D1A32E8F2000EC554 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B86443A01A32E8F2000EC554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -182,6 +193,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8057FA81A42C6EE004A2A0B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				B8057FAA1A42C74A004A2A0B /* chara */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		B8057FAA1A42C74A004A2A0B /* chara */ = {
+			isa = PBXGroup;
+			children = (
+				B8057FAB1A42C75A004A2A0B /* 着物女性_通_m2.png */,
+				B8057FAC1A42C75A004A2A0B /* 着物女性_通_m1.png */,
+				B8057FAD1A42C75A004A2A0B /* 着物女性_通_e1.png */,
+				B8057FAE1A42C75A004A2A0B /* 着物女性_通_e2.png */,
+				B8057FAF1A42C75A004A2A0B /* 着物女性_通.png */,
+			);
+			path = chara;
+			sourceTree = "<group>";
+		};
 		B860DCAC1A3348D400CA828A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,14 +244,13 @@
 		B86443931A32E8F2000EC554 /* BedsideVoice */ = {
 			isa = PBXGroup;
 			children = (
-				B86443B91A32E974000EC554 /* Vendor */,
-				B86443B71A32E966000EC554 /* Model */,
 				B86443B61A32E95F000EC554 /* Controller */,
+				B86443B71A32E966000EC554 /* Model */,
+				B86443B91A32E974000EC554 /* Vendor */,
 				B86443961A32E8F2000EC554 /* AppDelegate.swift */,
-				B86443981A32E8F2000EC554 /* ViewController.swift */,
+				B86443C51A32EB2C000EC554 /* Constants.swift */,
 				B864439A1A32E8F2000EC554 /* Main.storyboard */,
 				B864439D1A32E8F2000EC554 /* Images.xcassets */,
-				B86443C51A32EB2C000EC554 /* Constants.swift */,
 				B864439F1A32E8F2000EC554 /* LaunchScreen.xib */,
 				B86443941A32E8F2000EC554 /* Supporting Files */,
 			);
@@ -230,13 +260,14 @@
 		B86443941A32E8F2000EC554 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B8057FA81A42C6EE004A2A0B /* image */,
 				B8AF7C0C1A383EC000FDA346 /* music */,
 				B86443D11A32EFE7000EC554 /* scenario */,
 				B86443BB1A32E985000EC554 /* se */,
 				B86443BA1A32E97D000EC554 /* voice */,
 				B86443951A32E8F2000EC554 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B86443A91A32E8F2000EC554 /* BedsideVoiceTests */ = {
@@ -257,15 +288,16 @@
 			children = (
 				B86443AB1A32E8F2000EC554 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B86443B61A32E95F000EC554 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */,
+				B8057FB51A42C8DB004A2A0B /* RoomViewController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B86443B71A32E966000EC554 /* Model */ = {
@@ -275,7 +307,7 @@
 				B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */,
 				B86443B81A32E96C000EC554 /* Lib */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B86443B81A32E96C000EC554 /* Lib */ = {
@@ -288,7 +320,7 @@
 				B86443BF1A32EB0F000EC554 /* LocationGetter.swift */,
 				B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */,
 			);
-			name = Lib;
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		B86443B91A32E974000EC554 /* Vendor */ = {
@@ -297,7 +329,7 @@
 				B860DCA91A3347BD00CA828A /* Alamofire.swift */,
 				B86443CE1A32EEEC000EC554 /* SwiftyJSON.swift */,
 			);
-			name = Vendor;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		B86443BA1A32E97D000EC554 /* voice */ = {
@@ -311,14 +343,14 @@
 				B84AC9551A3D8281006F89D1 /* testVoice2.m4a */,
 				B8AF7C151A3846A600FDA346 /* voice02.m4a */,
 			);
-			name = voice;
+			path = voice;
 			sourceTree = "<group>";
 		};
 		B86443BB1A32E985000EC554 /* se */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = se;
+			path = se;
 			sourceTree = "<group>";
 		};
 		B86443D11A32EFE7000EC554 /* scenario */ = {
@@ -328,7 +360,7 @@
 				B8AF7C371A3999FB00FDA346 /* 書式ミス.json */,
 				B8AF7C181A39773C00FDA346 /* 雫_添い寝_scene1.json */,
 			);
-			name = scenario;
+			path = scenario;
 			sourceTree = "<group>";
 		};
 		B8AF7C0C1A383EC000FDA346 /* music */ = {
@@ -336,7 +368,7 @@
 			children = (
 				B8AF7C111A38407700FDA346 /* きらきら星.mp3 */,
 			);
-			name = music;
+			path = music;
 			sourceTree = "<group>";
 		};
 		B8AF7C1A1A397C0100FDA346 /* 雫 */ = {
@@ -355,7 +387,7 @@
 				B82A5CC41A3AD309009C7BE7 /* 雫_s1_r4_01.m4a */,
 				B82A5CC51A3AD309009C7BE7 /* 雫_s1_r4_02.m4a */,
 			);
-			name = "雫";
+			path = "雫";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,7 +512,9 @@
 				B82A5CC61A3AD309009C7BE7 /* 雫_s1_r4_01.m4a in Resources */,
 				B8AF7C171A3846A600FDA346 /* voice02.m4a in Resources */,
 				B8AF7C191A39773C00FDA346 /* 雫_添い寝_scene1.json in Resources */,
+				B8057FB11A42C75A004A2A0B /* 着物女性_通_m1.png in Resources */,
 				B82A5CB81A3AC3E6009C7BE7 /* 雫_s1_r2_01.m4a in Resources */,
+				B8057FB01A42C75A004A2A0B /* 着物女性_通_m2.png in Resources */,
 				B8AF7C241A397C9900FDA346 /* voice01.m4a in Resources */,
 				B82A5CC31A3AD300009C7BE7 /* 雫_name_お兄様_02.m4a in Resources */,
 				B86443A11A32E8F2000EC554 /* LaunchScreen.xib in Resources */,
@@ -488,8 +522,11 @@
 				B8AF7C341A39833800FDA346 /* 雫_s1_r1_03.m4a in Resources */,
 				B8AF7C121A38407700FDA346 /* きらきら星.mp3 in Resources */,
 				B8AF7C381A3999FB00FDA346 /* 書式ミス.json in Resources */,
+				B8057FB31A42C75A004A2A0B /* 着物女性_通_e2.png in Resources */,
+				B8057FB41A42C75A004A2A0B /* 着物女性_通.png in Resources */,
 				B82A5CBA1A3AC3E6009C7BE7 /* 雫_s1_r2_03.m4a in Resources */,
 				B8AF7C321A39833800FDA346 /* 雫_s1_r1_01.m4a in Resources */,
+				B8057FB21A42C75A004A2A0B /* 着物女性_通_e1.png in Resources */,
 				B86443D31A32EFF6000EC554 /* charA_greeting.json in Resources */,
 				B84AC9561A3D8281006F89D1 /* testVoice2.m4a in Resources */,
 				B864439E1A32E8F2000EC554 /* Images.xcassets in Resources */,
@@ -514,7 +551,7 @@
 			files = (
 				B8AF7C3A1A39A46100FDA346 /* JsonReader.swift in Sources */,
 				B88EFB321A346F6C0023E297 /* SleepVoiceManager.swift in Sources */,
-				B86443991A32E8F2000EC554 /* ViewController.swift in Sources */,
+				B8057FB61A42C8DB004A2A0B /* RoomViewController.swift in Sources */,
 				B86443C91A32EB39000EC554 /* FadeLabel.swift in Sources */,
 				B88EFB2E1A346F0F0023E297 /* SleepViewController.swift in Sources */,
 				B86443C31A32EB18000EC554 /* WeatherGetter.swift in Sources */,
@@ -546,6 +583,7 @@
 				B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */,
 				B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */,
 				B8AF7C081A38336D00FDA346 /* DispatchUtil.swift in Sources */,
+				B8057FB71A42C8DB004A2A0B /* RoomViewController.swift in Sources */,
 				B86443CD1A32EED1000EC554 /* TalkManager.swift in Sources */,
 				B86443CA1A32EB39000EC554 /* FadeLabel.swift in Sources */,
 				B86443C11A32EB0F000EC554 /* LocationGetter.swift in Sources */,
@@ -669,7 +707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = BedsideVoice/Info.plist;
+				INFOPLIST_FILE = "BedsideVoice/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -682,7 +720,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = BedsideVoice/Info.plist;
+				INFOPLIST_FILE = "BedsideVoice/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -702,7 +740,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BedsideVoiceTests/Info.plist;
+				INFOPLIST_FILE = "BedsideVoiceTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";
@@ -718,7 +756,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BedsideVoiceTests/Info.plist;
+				INFOPLIST_FILE = "BedsideVoiceTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b1785538-ee85-4c97-bd02-917cb781810c";

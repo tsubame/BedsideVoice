@@ -23,6 +23,19 @@ class SleepVoiceManagerTest: XCTestCase {
         super.tearDown()
     }
     
+    func testPlay() {
+        var expectation = self.expectationWithDescription("")
+        //var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
+        
+        _sut.play()
+        delay(0.1, {
+            XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
+            expectation.fulfill()
+        })
+        
+        self.waitForExpectationsWithTimeout(30.2, handler: nil)
+    }
+    
     func testPause() {
         var expectation = self.expectationWithDescription("")
         //var wait = self.expectationForNotification("sceneEnded", object: nil, handler: nil)
@@ -47,7 +60,7 @@ class SleepVoiceManagerTest: XCTestCase {
         
         _sut.playNextScene()
         delay(0.1, {
-                XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
+            XCTAssertFalse(self._sut.hasError(), "エラーがないこと")
             expectation.fulfill()
         })
 
