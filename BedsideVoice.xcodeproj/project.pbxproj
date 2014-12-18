@@ -54,8 +54,6 @@
 		B88EFB2F1A346F0F0023E297 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */; };
 		B88EFB321A346F6C0023E297 /* SleepVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */; };
 		B88EFB331A346F6C0023E297 /* SleepVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */; };
-		B8AF7C071A38336D00FDA346 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */; };
-		B8AF7C081A38336D00FDA346 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */; };
 		B8AF7C0B1A383E9600FDA346 /* SoundPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AF7C0A1A383E9600FDA346 /* SoundPlayerTest.swift */; };
 		B8AF7C121A38407700FDA346 /* きらきら星.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C111A38407700FDA346 /* きらきら星.mp3 */; };
 		B8AF7C131A38407700FDA346 /* きらきら星.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8AF7C111A38407700FDA346 /* きらきら星.mp3 */; };
@@ -159,7 +157,6 @@
 		B86443D51A32F075000EC554 /* TalkManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkManagerTest.swift; sourceTree = "<group>"; };
 		B88EFB2D1A346F0F0023E297 /* SleepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		B88EFB311A346F6C0023E297 /* SleepVoiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepVoiceManager.swift; sourceTree = "<group>"; };
-		B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
 		B8AF7C0A1A383E9600FDA346 /* SoundPlayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayerTest.swift; sourceTree = "<group>"; };
 		B8AF7C111A38407700FDA346 /* きらきら星.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "きらきら星.mp3"; sourceTree = "<group>"; };
 		B8AF7C151A3846A600FDA346 /* voice02.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice02.m4a; sourceTree = "<group>"; };
@@ -318,7 +315,6 @@
 				B86443C81A32EB39000EC554 /* FadeLabel.swift */,
 				B86443C21A32EB18000EC554 /* WeatherGetter.swift */,
 				B86443BF1A32EB0F000EC554 /* LocationGetter.swift */,
-				B8AF7C061A38336D00FDA346 /* DispatchUtil.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -559,7 +555,6 @@
 				B86443BD1A32EAF4000EC554 /* SoundPlayer.swift in Sources */,
 				B86443971A32E8F2000EC554 /* AppDelegate.swift in Sources */,
 				B860DCAA1A3347BD00CA828A /* Alamofire.swift in Sources */,
-				B8AF7C071A38336D00FDA346 /* DispatchUtil.swift in Sources */,
 				B86443CF1A32EEEC000EC554 /* SwiftyJSON.swift in Sources */,
 				B86443C01A32EB0F000EC554 /* LocationGetter.swift in Sources */,
 				B86443C61A32EB2C000EC554 /* Constants.swift in Sources */,
@@ -582,7 +577,6 @@
 				B86443AD1A32E8F2000EC554 /* BedsideVoiceTests.swift in Sources */,
 				B861061D1A3307B7002AC02D /* WeatherGetterTest.swift in Sources */,
 				B86443D61A32F075000EC554 /* TalkManagerTest.swift in Sources */,
-				B8AF7C081A38336D00FDA346 /* DispatchUtil.swift in Sources */,
 				B8057FB71A42C8DB004A2A0B /* RoomViewController.swift in Sources */,
 				B86443CD1A32EED1000EC554 /* TalkManager.swift in Sources */,
 				B86443CA1A32EB39000EC554 /* FadeLabel.swift in Sources */,

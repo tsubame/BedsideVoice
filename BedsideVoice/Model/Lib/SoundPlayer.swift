@@ -103,7 +103,6 @@ public class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         playVoice(file)
     }
     
-    /*
     func playVoicesOrg(files: [String]) {
         _queuePlayer = makeAVQuePlayer(files)
 
@@ -121,7 +120,7 @@ public class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         _queuePlayer?.play()
         
         println("次の音声を再生します。 \(files)")
-    }*/
+    }
     
     // 音声レベルを取得
     func getVoiceLevel() -> Float {

@@ -14,7 +14,7 @@ class JsonReader: NSObject {
     var _hasError = false
     // エラーメッセージ
     var _errorMessage: String?
-    
+    // ファイル名
     var _fileName: String = ""
     
     override init() {

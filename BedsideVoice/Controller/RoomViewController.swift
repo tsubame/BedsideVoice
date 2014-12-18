@@ -124,7 +124,7 @@ class RoomViewController: UIViewController {
     //===========================================================
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         showChar()
         startWinkTimer(_charImageView!)
         

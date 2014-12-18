@@ -140,7 +140,7 @@ class WeatherGetter: NSObject {
         if latitude != nil {
             _latitude  = latitude!
             _longitude = longitude!
-            
+    
             getCurrentWeather()
             getDailyWeather()
         }

@@ -17,7 +17,6 @@ class LocationGetter: NSObject, CLLocationManagerDelegate {
     var _latitude:   CLLocationDegrees = 0.0
     // 経度
     var _longitude:  CLLocationDegrees = 0.0
-    
     //var _heading:    CLLocationDirection = 0.0
     
     var _timer: NSTimer?

@@ -17,7 +17,6 @@ class TalkManager: NSObject {
     
     var _hasError = false
     
-    
     // 挨拶の配列の中に入っている文字列の数 2つ
     let VALUECOUNT_IN_GREET = 2
     

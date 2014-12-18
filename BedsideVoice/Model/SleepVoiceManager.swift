@@ -209,7 +209,7 @@ class SleepVoiceManager: NSObject {
             let numMatch = tagStr.rangeOfString("\\d+", options: .RegularExpressionSearch)
             let numStr   = tagStr.substringWithRange(numMatch)
 // ↓の部分は設定情報から取得する必要あり
-var name = "お兄様"
+    var name = "お兄様"
             var nameFile = "\(_charName)_name_\(name)_\(numStr)"
 
             if tagMatch.location == 0 {
